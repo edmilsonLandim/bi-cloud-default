@@ -1,0 +1,8 @@
+# Materiais do formador (raiz de cada OA) - ficam só localmente
+/*/*.pdf
+/*/*.xlsx
+/*/*.csv
+
+# Ficheiros temporários do Office / Power BI
+~$*
+*.tmp
