@@ -1,0 +1,41 @@
+{
+  "name": "Skodji Digital",
+  "dataColors": [
+    "#1E55A2",
+    "#32B2E7",
+    "#0E3A75",
+    "#8FD3F2",
+    "#5B7DB8",
+    "#212121",
+    "#B9C7DD",
+    "#DF3131"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#212121",
+  "tableAccent": "#1E55A2",
+  "good": "#2E9E5B",
+  "neutral": "#F5B800",
+  "bad": "#DF3131",
+  "textClasses": {
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 28,
+      "color": "#1E55A2"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#212121"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#212121"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#646464"
+    }
+  }
+}
