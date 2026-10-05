@@ -3,6 +3,10 @@
 /*/*.xlsx
 /*/*.csv
 
+# Enunciados e dados fornecidos nos labs
+/*/oa-*/lab-*/*.pdf
+/*/oa-*/lab-*/*.xlsx
+
 # Ficheiros temporários do Office / Power BI
 ~$*
 *.tmp

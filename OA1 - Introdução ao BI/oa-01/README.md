@@ -20,12 +20,14 @@ Guardar o `.pbix` em [`lab-sincrono/`](lab-sincrono/).
 ## Lab assíncrono
 - Abre: 01/10/2026 às 19:00
 - Data limite: 20/11/2026 às 23:59
-- Enunciado e entrega: [`lab-assincrono/`](lab-assincrono/) *(a aguardar enunciado)*
+- Enunciado e entrega: [`lab-assincrono/`](lab-assincrono/README.md) - dashboard
+  com identidade Skodji Digital, publicado no Power BI Service e submetido no
+  Moodle a 05/10/2026
 
 ## Testes
 - Pós-teste: 01/10/2026 19:45 - 20/11/2026 23:59
 
 ## Estado
 - [ ] Lab síncrono
-- [ ] Lab assíncrono
+- [x] Lab assíncrono
 - [ ] Pós-teste
