@@ -52,16 +52,68 @@ SalariedFlag 52 assalariados (-1) / 238 não.
      mudar o tipo diretamente lê `1.1204` como `11204`. Usar **Alterar tipo ->
      Utilizando a Região -> Decimal / Inglês (Estados Unidos)** em
      `Cotação por 1 €`, `Câmbio` e `Câmbio inverso`
-   - (opcional) Adicionar Coluna -> **Coluna Personalizada** `Origem` com `"BCE"` /
-     `"Outras"`, para distinguir as linhas depois de juntar
+   - Adicionar Coluna -> **Coluna Personalizada** `Origem` com `"BCE"` /
+     `"Outras"`, para distinguir as linhas depois de juntar (usada no dashboard)
 3. **Base -> Acrescentar Consultas -> Acrescentar Consultas como Nova** ->
    `Cotações BCE` + `Cotações Outras` -> renomear para `Cotações`.
    Resultado: **152 linhas** (28 + 124).
-4. Nas duas consultas de origem: botão direito -> desmarcar **Ativar carregamento**
+4. Limpeza depois do Append, na consulta `Cotações`:
+   - A tabela "outras moedas" inclui **ouro (`XAU`)** e **prata (`XAG`)**, que não
+     são moedas -> filtrar `Código` e desmarcar os dois. Ficam **150 moedas**
+   - Erro de escrita na fonte: `Ilhas Mlavinas` -> **Substituir Valores** ->
+     `Ilhas Malvinas`
+5. Nas duas consultas de origem: botão direito -> desmarcar **Ativar carregamento**
    (só `Cotações` vai para o modelo).
 
 Verificação: `CVE` ≈ 110 escudos por 1 € (a 05/10/2026: 109,9211). O valor muda
 todos os dias, porque a fonte é atualizada.
+
+### Dashboard com a identidade Skodji Digital
+Ficheiros em [`lab-sincrono/dashboard/`](lab-sincrono/dashboard/): uma página
+por parte, com fundo (`fundo-parte-a.png`, `fundo-parte-b.png`), mockup
+(`mockup-parte-a.png`, `mockup-parte-b.png`) e o tema `tema-skodji.json` (o
+mesmo do OA1). Os mockups usam os valores reais dos dados.
+
+Configuração igual à do OA1: **Ver -> Temas -> Procurar temas**; **Formatar
+página -> Fundo da tela -> Imagem**, Ajuste **Ajustar**, Transparência **0%**;
+em cada visual desligar **Título** e **Fundo**; nos gráficos de barras/colunas
+ligar **Rótulos de dados** e desligar o **Eixo X** (ou Y nas colunas). As posições
+são as mesmas nas duas páginas:
+
+| Posição | X | Y | Largura | Altura |
+|---|---|---|---|---|
+| Cartão 1 / 2 / 3 / 4 | 38 / 350 / 662 / 974 | 122 | 270 | 50 |
+| Painel grande (esquerda) | 34 | 242 | 756 | 444 |
+| Painel direita, em cima | 826 | 242 | 420 | 160 |
+| Painel direita, em baixo | 826 | 478 | 420 | 208 |
+
+**Página 1 - Parte A (Recursos Humanos)**
+
+| Visual | Campos | Valor esperado |
+|---|---|---|
+| Cartão 1 - Funcionários | Contagem de `EmployeeID` | 290 |
+| Cartão 2 - Assalariados | Contagem de `EmployeeID` + filtro do visual `SalariedFlag` = Verdadeiro (ou Sim) | 52 |
+| Cartão 3 - Funções distintas | Contagem (Distinta) de `Title` (depois de dividir) | 55 |
+| Cartão 4 - Média horas de férias | Média de `VacationHours` (1 casa decimal) | 50,6 |
+| Colunas - por ano de contratação | Eixo X `HireDate` -> hierarquia só com **Ano**; Eixo Y Contagem de `EmployeeID` | pico em 1999 (198) |
+| Anel - Género | Legenda `Gender`; Valores Contagem de `EmployeeID` | 206 Masculino / 84 Feminino |
+| Barras - por Work Center | Eixo Y `Work Center`; Eixo X Contagem de `EmployeeID`; filtro `Work Center` **não está em branco** | WC10 20 ... WC60 29 |
+
+**Página 2 - Parte B (Cotações do Euro)**
+
+| Visual | Campos | Valor esperado (05/10/2026) |
+|---|---|---|
+| Cartão 1 - Moedas | Contagem de `Código` | 150 |
+| Cartão 2 - CVE | Máximo de `Cotação por 1 €` + filtro do visual `Código` = CVE (2 casas decimais) | 109,92 |
+| Cartão 3 - USD | igual, com `Código` = USD (4 casas) | 1,1204 |
+| Cartão 4 - BRL | igual, com `Código` = BRL (4 casas) | 5,5849 |
+| Tabela | `País`, `Código`, `Moeda`, `Cotação por 1 €`, `Câmbio inverso`, `Origem` | 150 linhas |
+| Anel - Moedas por origem | Legenda `Origem`; Valores Contagem de `Código` | 28 BCE / 122 Outras |
+| Barras - mais fortes que o Euro | Eixo Y `Código`; Eixo X `Câmbio inverso`; filtro do visual `Câmbio inverso` **é maior que 1**; ordenar decrescente | 10 moedas, KWD 2,89 € no topo |
+
+Nota: no gráfico das moedas fortes usa-se o filtro "> 1" em vez de "N Principais",
+porque há empates (SHP, GIP, FKP e GBP valem todos ≈ 1,18) e o Top N mostraria
+mais barras do que o pedido.
 
 ## Lab assíncrono
 - Abre: 06/10/2026 às 19:45 - data limite: 20/11/2026 às 23:59
