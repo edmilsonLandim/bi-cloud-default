@@ -109,12 +109,12 @@ pede um gráfico de linhas: as duas opções mostram a linha.
 Guardar em [`evidencias/`](evidencias/):
 - `01-append-power-query.png` - consulta `Lançamentos` com os passos aplicados
 - `02-relatorio.png` - dashboard no Power BI Desktop
-- `03-power-bi-service.png` - relatório publicado
-- `04-submissao-moodle.png` - submissão no Moodle
+- `03-publicar-sucesso.png` - publicação concluída a partir do Power BI Desktop
+- `04-submissao-moodle.png` - submissão no Moodle (Submetido para avaliação)
 
 ## Estado
-- [ ] Parte 1 - ficheiro criado e 12 folhas importadas
-- [ ] Parte 2 - Append (27 472 linhas) e transformações
-- [ ] Parte 3 - cartão (48,56 M) e gráfico de linhas
-- [ ] Publicado no Power BI Service
-- [ ] Submetido no Moodle
+- [x] Parte 1 - [`dashboard/EdmilsonLandim_07-10-2026.pbix`](dashboard/EdmilsonLandim_07-10-2026.pbix) com as 12 folhas importadas
+- [x] Parte 2 - Append (27 472 linhas) e transformações ([`power-query.m`](power-query.m))
+- [x] Parte 3 - cartão (48,56 M), gráfico de linhas e dashboard com identidade Skodji
+- [x] Publicado no Power BI Service ("A minha área de trabalho")
+- [x] Submetido no Moodle - 07/10/2026 15:09, 44 dias antes do prazo

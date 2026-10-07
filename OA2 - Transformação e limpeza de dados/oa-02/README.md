@@ -124,5 +124,5 @@ mais barras do que o pedido.
 - [x] Pré-teste - todas as respostas certas (05/10/2026)
 - [x] Lab síncrono - `OA2 - Lab Síncrono.pbix`, páginas RH e Cotações (evidências em
   [`lab-sincrono/evidencias/`](lab-sincrono/evidencias/))
-- [ ] Lab assíncrono
+- [x] Lab assíncrono - submetido no Moodle a 07/10/2026 (Append das 12 folhas)
 - [ ] Pós-teste
