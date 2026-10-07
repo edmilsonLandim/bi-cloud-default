@@ -117,10 +117,12 @@ mais barras do que o pedido.
 
 ## Lab assíncrono
 - Abre: 06/10/2026 às 19:45 - data limite: 20/11/2026 às 23:59
-- Enunciado e entrega: [`lab-assincrono/`](lab-assincrono/) *(a aguardar enunciado)*
+- Enunciado e guia: [`lab-assincrono/README.md`](lab-assincrono/README.md) - juntar as 12
+  folhas de `All data by Month.xlsx` (27 472 lançamentos de 2025) com Append Queries
 
 ## Estado
 - [x] Pré-teste - todas as respostas certas (05/10/2026)
-- [ ] Lab síncrono
+- [x] Lab síncrono - `OA2 - Lab Síncrono.pbix`, páginas RH e Cotações (evidências em
+  [`lab-sincrono/evidencias/`](lab-sincrono/evidencias/))
 - [ ] Lab assíncrono
 - [ ] Pós-teste
