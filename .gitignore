@@ -10,3 +10,5 @@
 # Ficheiros temporários do Office / Power BI
 ~$*
 *.tmp
+/*/oa-*/lab-*/*.csv
+/*/oa-*/lab-*/csv/
