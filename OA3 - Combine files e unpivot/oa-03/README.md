@@ -11,6 +11,28 @@
 | Lab assíncrono | 08/10/2026 19:45 | 20/11/2026 23:59 |
 | Pós-teste | 08/10/2026 20:30 | 20/11/2026 23:59 |
 
+## Conceitos da aula
+Resumo dos materiais de estudo desta pasta (`A3-Power_Query_Automation_Mastery.pdf`,
+15 diapositivos, e o infográfico `A3-Automação_e_Limpeza_de_Dados.png`):
+
+| Conceito | Regra prática |
+|---|---|
+| **Fragmentação, tabela cruzada, ruído** | Os três problemas que o Power Query resolve: dezenas de ficheiros iguais espalhados, meses em colunas, totais e subtotais no meio dos dados |
+| **Combine Files (importar a partir de uma Pasta)** | **Obter Dados -> Pasta -> caminho do diretório -> Combinar e Transformar Dados**. Não selecionar ficheiros individuais: apontar para a pasta |
+| **Regra de ouro do Combine Files** | Todos os ficheiros da pasta têm a **mesma estrutura** (mesmas colunas, mesma ordem) |
+| **Nomes de folha dinâmicos** | No Editor Avançado, trocar `Source{[Item="Sheet1",Kind="Sheet"]}[Data]` por `Source{0}[Data]` (primeira folha por posição). O processo não falha se alguém mudar o nome da folha num ficheiro mensal |
+| **Atualização com um clique** | Ficheiro novo na pasta + **Atualizar** = dados novos no relatório, sem copiar/colar |
+| **Formato tabular vs. tabela resumo** | O Power BI precisa de dados em **lista** (cada coluna é uma variável: Conta, Mês, Valor). A tabela cruzada é para leitura humana: cada mês é uma variável distinta e não dá para comparar meses num eixo |
+| **Unpivot (Anular Dinamização)** | 1) selecionar as colunas **âncora** (Ctrl + clique: Conta, Designação); 2) botão direito; 3) **Anular Dinamização de Outras Colunas**. Nunca selecionar os meses: com "Outras Colunas", meses futuros entram automaticamente. Nascem duas colunas: **Atributo** e **Valor** |
+| **Limpeza antes do Unpivot (regra de ouro)** | Remover a coluna **Total Geral** e as linhas **nulas / Subtotal** antes de anular a dinamização, senão os valores contam a dobrar |
+| **Higiene de dados** | 1) **Apagar o passo automático "Tipo alterado"**, que fixa os nomes das colunas e falha no Unpivot; 2) remover colunas irrelevantes (ex.: nome do ficheiro de origem); 3) **tipos de dados no fim** (Texto, Data, Moeda) |
+| **Datas válidas sem fórmulas** | **Método A** (um ano implícito): coluna Mês -> Transformar -> Formatar -> **Adicionar Sufixo** ` 2025` -> tipo **Data**. **Método B** (vários anos): selecionar `Mês` e `Ano` -> **Intercalar Colunas** -> tipo **Data** |
+| **Visualização** | Data no **Eixo X**, Valor no **Eixo Y**, Designação na **Legenda**. **Segmentação** (slicer) com pesquisa para navegar num "mar de contas"; **drill-down** Ano -> Trimestre -> Mês |
+
+Ciclo completo: Ficheiros brutos -> Pasta partilhada -> Combine Files -> Limpeza ->
+Unpivot -> Datas -> Modelo tabular -> Dashboards. A partir daí, cada ciclo novo é só
+**Atualizar**.
+
 ## Lab síncrono
 Ficheiros (em [`lab-sincrono/`](lab-sincrono/), fora do Git por serem do formador):
 - `Demo4.xlsx` - tabela cruzada de vendas (Parte B)
@@ -21,7 +43,8 @@ Ficheiros (em [`lab-sincrono/`](lab-sincrono/), fora do Git por serem do formado
 Guardar o `.pbix` como `OA3 - Lab Síncrono.pbix` em `lab-sincrono/`.
 
 ### Parte A - Combine Files (3 CSV de lançamentos contabilísticos)
-Os 3 ficheiros têm a mesma estrutura: UTF-8, separador `;`, 9 colunas
+Os 3 ficheiros têm a mesma estrutura (regra de ouro cumprida): UTF-8, separador `;`,
+9 colunas
 `CodFilial; DataMovimento; CodConta; CodCentroCusto; StatusLançamento; TipoLancamento; Lote; LoteItem; Valor`.
 
 | Ano | Linhas | Soma de Valor | Observações |
@@ -37,24 +60,23 @@ Os 3 ficheiros têm a mesma estrutura: UTF-8, separador `;`, 9 colunas
 2. O Power BI cria a pasta *Funções Auxiliares* (Ficheiro de Exemplo, Parâmetro,
    Transformar Ficheiro) e a consulta `csv` com a coluna `Source.Name` (nome do
    ficheiro). Renomear a consulta para `Lançamentos`.
-3. **Armadilha da região.** Os CSV usam **vírgula decimal** (`1785,6832`) e datas
+3. **Higiene:** apagar o passo `Tipo alterado` automático e remover `Source.Name`
+   (a `DataMovimento` já tem o ano).
+4. **Armadilha da região.** Os CSV usam **vírgula decimal** (`1785,6832`) e datas
    **dd/mm/aaaa**. Se o modelo estiver em inglês (EUA), como sugerem os meses em
    inglês do OA2, `1785,6832` é lido como `17856832` e `02/01/2018` como 1 de
-   fevereiro. Apagar o passo `Tipo alterado` automático e usar **Alterar tipo ->
-   Utilizando a Região -> Português (Portugal)** em `DataMovimento` (Data) e
-   `Valor` (Número decimal). Conferir: total de **140 690 832,57**, e a primeira
-   linha com data **02/01/2018** e valor **1 785,68**.
-4. Restantes tipos: `CodFilial`, `CodConta`, `CodCentroCusto`, `Lote`, `LoteItem` ->
+   fevereiro. Usar **Alterar tipo -> Utilizando a Região -> Português (Portugal)** em
+   `DataMovimento` (Data) e `Valor` (Número decimal). Conferir: total de
+   **140 690 832,57**, e a primeira linha com data **02/01/2018** e valor **1 785,68**.
+5. Restantes tipos: `CodFilial`, `CodConta`, `CodCentroCusto`, `Lote`, `LoteItem` ->
    **Texto** (são códigos).
-5. `TipoLancamento`: Substituir Valores (célula inteira) `D` -> `Débito`,
+6. `TipoLancamento`: Substituir Valores (célula inteira) `D` -> `Débito`,
    `C` -> `Crédito`.
-6. `Source.Name`: remover, ou extrair o ano (Transformar -> Extrair -> Texto Entre
-   Delimitadores `LancamentosContabilidade` e `.csv`) - a `DataMovimento` já tem o ano.
 7. `StatusLançamento`: manter as linhas `NÃO INTEGRADO`, mas usá-las num filtro ou
    segmentação no relatório.
 
-Vantagem do Combine Files: um CSV novo (ex.: `...2021.csv`) colocado na pasta
-`csv/` entra no modelo com um simples **Atualizar**, sem mexer no Power Query.
+Teste do "um clique": copiar um dos CSV para `csv\` com outro nome e carregar em
+**Atualizar** - as linhas aparecem a dobrar. Apagar a cópia e atualizar outra vez.
 
 ### Parte B - Unpivot do `Demo4.xlsx` (tabela cruzada)
 Folha `Serviços`, 49 linhas x 16 colunas: `Anos`, `Vendedor`, `Tipo`, `jan` ... `dez`,
@@ -62,28 +84,32 @@ Folha `Serviços`, 49 linhas x 16 colunas: `Anos`, `Vendedor`, `Tipo`, `jan` ...
 
 | Problema | Ferramenta |
 |---|---|
-| Meses em colunas (`jan` ... `dez`) | **Anular Dinamização de Outras Colunas** (Unpivot) com `Anos`, `Vendedor`, `Tipo` selecionadas |
-| Coluna `Total Geral` (soma calculada) | **Remover Colunas** (antes do Unpivot, senão vira um "mês") |
+| Coluna `Total Geral` (soma calculada) | **Remover Colunas** antes do Unpivot (senão vira um "mês") |
 | 13 linhas de subtotal: `Costa Total`, `2011 Total`, `Total Geral` ... (todas com `Tipo` vazio) | **Filtrar** `Tipo` -> desmarcar `(nulo)` |
+| Passo automático `Tipo alterado` | **Apagar** antes do Unpivot (fixa os nomes `jan` ... `dez`) |
+| Meses em colunas (`jan` ... `dez`) | selecionar `Anos`, `Vendedor`, `Tipo` -> **Anular Dinamização de Outras Colunas** -> renomear `Atributo` para `Mês` |
 | `Anos` mistura números e texto (`2011 Total`) | depois do filtro -> tipo **Número inteiro** |
-| Mês em texto abreviado | coluna `Nº Mês` + coluna `Data` (1.º dia do mês), para ordenar e usar a hierarquia de datas |
+| Mês em texto abreviado | **Método B**: selecionar `Mês` e `Anos` -> **Intercalar Colunas** (separador Espaço) -> `jan 2011` -> **Alterar tipo -> Utilizando a Região -> Data / Português (Portugal)** -> `01/01/2011` |
 
 Resultado: 36 linhas de detalhe (3 anos x 3 vendedores x 4 tipos) x 12 meses =
 **432 linhas**, total **5 543 168,90** (igual à célula `Total Geral`).
 
+Alternativa em M, que mantém `Anos` e `Mês` e acrescenta `Nº Mês` e `Data`
+(útil para ordenar os meses):
+
 ```m
 let
     Origem = Excel.Workbook(File.Contents("...\lab-sincrono\Demo4.xlsx"), null, true),
-    Servicos = Origem{[Item = "Serviços", Kind = "Sheet"]}[Data],
+    Servicos = Origem{0}[Data],                     // primeira folha, por posição
     #"Cabeçalhos promovidos" = Table.PromoteHeaders(Servicos, [PromoteAllScalars = true]),
     #"Linhas filtradas" = Table.SelectRows(#"Cabeçalhos promovidos", each [Tipo] <> null),
     #"Colunas removidas" = Table.RemoveColumns(#"Linhas filtradas", {"Total Geral"}),
     #"Coluna não dinamizada" = Table.UnpivotOtherColumns(#"Colunas removidas", {"Anos", "Vendedor", "Tipo"}, "Mês", "Valor"),
-    #"Tipo alterado" = Table.TransformColumnTypes(#"Coluna não dinamizada", {{"Anos", Int64.Type}, {"Vendedor", type text}, {"Tipo", type text}, {"Mês", type text}, {"Valor", type number}}),
-    #"Nº Mês" = Table.AddColumn(#"Tipo alterado", "Nº Mês", each List.PositionOf({"jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"}, [Mês]) + 1, Int64.Type),
-    Data = Table.AddColumn(#"Nº Mês", "Data", each #date([Anos], [Nº Mês], 1), type date)
+    #"Nº Mês" = Table.AddColumn(#"Coluna não dinamizada", "Nº Mês", each List.PositionOf({"jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"}, [Mês]) + 1, Int64.Type),
+    Data = Table.AddColumn(#"Nº Mês", "Data", each #date([Anos], [Nº Mês], 1), type date),
+    #"Tipo alterado" = Table.TransformColumnTypes(Data, {{"Anos", Int64.Type}, {"Vendedor", type text}, {"Tipo", type text}, {"Mês", type text}, {"Valor", type number}})
 in
-    Data
+    #"Tipo alterado"
 ```
 
 Valores para conferir:
@@ -91,12 +117,14 @@ Valores para conferir:
 - por vendedor: Silva 1 933 358,75 / Mendes 1 825 471,80 / Costa 1 784 338,34
 - por tipo: Software 1 496 870,31 / Formação 1 435 235,32 / Serviços 1 393 286,83 / Hardware 1 217 776,44
 
-No relatório, ordenar `Mês` pela coluna `Nº Mês` (**Ferramentas de coluna ->
-Ordenar por coluna**), senão os meses aparecem por ordem alfabética (abr, ago, dez...).
+Se usar a coluna de texto `Mês` num visual, ordená-la por `Nº Mês` (**Ferramentas de
+coluna -> Ordenar por coluna**), senão os meses aparecem por ordem alfabética
+(abr, ago, dez...). Com a coluna `Data` isto não é preciso.
 
 ## Lab assíncrono
 - Abre: 08/10/2026 às 19:45 - data limite: 20/11/2026 às 23:59
-- Enunciado e entrega: [`lab-assincrono/`](lab-assincrono/) *(a aguardar enunciado)*
+- Enunciado e guia: [`lab-assincrono/README.md`](lab-assincrono/README.md) - Unpivot do
+  balancete `Mapa contabilistico.xlsx` (99 contas SNC x 12 meses de 2025)
 
 ## Estado
 - [x] Pré-teste - concluído
