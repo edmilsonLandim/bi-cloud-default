@@ -160,14 +160,15 @@ automaticamente.
 
 ## Evidências
 Guardar em [`evidencias/`](evidencias/):
-- `01-unpivot-power-query.png` - consulta com os passos aplicados e as colunas Conta SNC, Designação SNC, Data, Valor
 - `02-relatorio.png` - cartão, gráfico de linhas e segmentação
 - `03-publicar-sucesso.png` - publicação no Power BI Service
+
+Código M final da consulta: [`power-query.m`](power-query.m).
 - `04-submissao-moodle.png` - submissão no Moodle
 
 ## Estado
-- [ ] Parte 1 - ficheiro criado e Excel importado
-- [ ] Parte 2 - limpeza, Unpivot (1 065 linhas), datas e tipos
-- [ ] Parte 3 - cartão (7,72 M), gráfico de linhas e segmentação por designação
-- [ ] Publicado no Power BI Service
-- [ ] Submetido no Moodle
+- [x] Parte 1 - [`EdmilsonLandim_16-10-2026.pbix`](EdmilsonLandim_16-10-2026.pbix) com o Excel importado
+- [x] Parte 2 - limpeza, Unpivot (1 065 linhas), datas e tipos
+- [x] Parte 3 - cartão (7,72 M€), gráfico de linhas e segmentação por designação
+- [x] Publicado no Power BI Service
+- [x] Submetido no Moodle - 16/10/2026 17:18, 35 dias antes do prazo
