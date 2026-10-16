@@ -74,6 +74,8 @@ Os 3 ficheiros têm a mesma estrutura (regra de ouro cumprida): UTF-8, separador
    `C` -> `Crédito`.
 7. `StatusLançamento`: manter as linhas `NÃO INTEGRADO`, mas usá-las num filtro ou
    segmentação no relatório.
+8. Coluna `Ano`: selecionar `DataMovimento` -> Adicionar Coluna -> Data -> Ano -> **Ano**
+   (substitui a informação do `Source.Name`, um ficheiro por ano; usada no dashboard).
 
 Teste do "um clique": copiar um dos CSV para `csv\` com outro nome e carregar em
 **Atualizar** - as linhas aparecem a dobrar. Apagar a cópia e atualizar outra vez.
@@ -120,6 +122,49 @@ Valores para conferir:
 Se usar a coluna de texto `Mês` num visual, ordená-la por `Nº Mês` (**Ferramentas de
 coluna -> Ordenar por coluna**), senão os meses aparecem por ordem alfabética
 (abr, ago, dez...). Com a coluna `Data` isto não é preciso.
+
+### Dashboard com a identidade Skodji Digital
+Ficheiros em [`lab-sincrono/dashboard/`](lab-sincrono/dashboard/): uma página por
+parte - `fundo-parte-a.png` / `mockup-parte-a.png` e `fundo-parte-b.png` /
+`mockup-parte-b.png` - e `tema-skodji.json`. O tema do OA3 tem uma **3.ª cor amarela**
+(`#F5B800`) para os gráficos com 3 anos; as duas primeiras continuam azul `#1E55A2` e
+ciano `#32B2E7`.
+
+Configuração igual à do OA1/OA2: **Ver -> Temas -> Procurar temas**; **Formatar página
+-> Fundo da tela -> Imagem**, Ajuste **Ajustar**, Transparência **0%**; em cada visual
+desligar **Título** e **Fundo**. Posições (iguais nas duas páginas):
+
+| Posição | X | Y | Largura | Altura |
+|---|---|---|---|---|
+| Cartão 1 / 2 / 3 / 4 | 38 / 350 / 662 / 974 | 122 | 270 | 50 |
+| Painel grande (esquerda) | 34 | 242 | 756 | 444 |
+| Painel direita, em cima | 826 | 242 | 420 | 160 |
+| Painel direita, em baixo | 826 | 478 | 420 | 208 |
+
+**Página 1 - Parte A (Combine Files)**
+
+| Visual | Campos | Valor esperado |
+|---|---|---|
+| Cartão 1 - Valor total | Soma de `Valor` (Milhões, 2 casas) | 140,69 M |
+| Cartão 2 - Lançamentos | Contagem de `Valor` | 76.672 |
+| Cartão 3 - Ficheiros combinados | Contagem (Distinta) de `Ano` | 3 |
+| Cartão 4 - Não integrados | Contagem de `Valor` + filtro do visual `StatusLançamento` = NÃO INTEGRADO | 2.447 |
+| Linhas - valor por mês | Eixo X `DataMovimento` (hierarquia só com **Mês**); Eixo Y Soma de `Valor`; **Legenda `Ano`** | 3 linhas; 2020 cai em setembro (dados só até 10/09) |
+| Anel - Débito vs Crédito | Legenda `TipoLancamento`; Valores Soma de `Valor` | Crédito 74,39 M / Débito 66,30 M |
+| Barras - valor por ano | Eixo Y `Ano`; Eixo X Soma de `Valor` | 2018 48,56 M / 2019 55,42 M / 2020 36,71 M |
+
+**Página 2 - Parte B (Unpivot)**
+
+| Visual | Campos | Valor esperado |
+|---|---|---|
+| Cartão 1 - Vendas totais | Soma de `Valor` (Milhões) | 5,54 M |
+| Cartões 2 a 4 - Vendas 2011 / 2012 / 2013 | Soma de `Valor` + filtro do visual `Anos` = 2011 / 2012 / 2013 | 1,84 M / 1,76 M / 1,94 M |
+| Linhas - vendas por mês | Eixo X `Data` (só **Mês**) ou `Mês` ordenado por `Nº Mês`; Eixo Y Soma de `Valor`; **Legenda `Anos`** | 3 linhas quase paralelas, picos em fev e abr |
+| Anel - por tipo | Legenda `Tipo`; Valores Soma de `Valor` | Software 27,0% ... Hardware 22,0% |
+| Barras - por vendedor | Eixo Y `Vendedor`; Eixo X Soma de `Valor` | Silva 1,93 M / Mendes 1,83 M / Costa 1,78 M |
+
+Atenção: `Anos` é um número inteiro, por isso o Power BI tenta **somá-lo** (Σ). Em
+**Ferramentas de coluna -> Resumo**, escolher **Não resumir** antes de o usar na legenda.
 
 ## Lab assíncrono
 - Abre: 08/10/2026 às 19:45 - data limite: 20/11/2026 às 23:59

@@ -128,6 +128,36 @@ Totais por classe SNC (com a coluna opcional `Classe SNC`), para conferir:
 | 8 | Resultados | 7 | 2 348 536,53 |
 | | **Total** | **1 065** | **7 721 393,64** |
 
+## Dashboard com a identidade Skodji Digital
+Ficheiros em [`dashboard/`](dashboard/): `fundo-dashboard.png`, `mockup-dashboard.png`
+e `tema-skodji.json` (o mesmo do lab síncrono do OA3). Configuração igual à dos labs
+anteriores (tema, fundo **Ajustar** com transparência 0%, visuais sem título nem fundo).
+
+Para este dashboard são precisas as duas colunas opcionais da Parte 2:
+- `Conta - Designação` (passo 8): **`Conta SNC` sozinha só tem 93 valores distintos**
+  e `Designação SNC` 91, por causa das repetições. Só o par dá as 99 contas.
+- `Classe SNC` com nome, via Adicionar Coluna -> **Coluna Personalizada**:
+
+  ```m
+  {"1 Meios fin. líquidos", "2 Contas a rec./pagar", "3 Inventários", "4 Investimentos",
+   "5 Capital e reservas", "6 Gastos", "7 Rendimentos", "8 Resultados"}
+   {Number.From(Text.Start([Conta SNC], 1)) - 1}
+  ```
+
+| Visual | Campos | X | Y | Largura | Altura | Valor esperado |
+|---|---|---|---|---|---|---|
+| Cartão - Valor total | Soma de `Valor` (Milhões, 2 casas) | 38 | 122 | 270 | 50 | 7,72 M |
+| Cartão - Contas SNC | Contagem (Distinta) de `Conta - Designação` | 350 | 122 | 270 | 50 | 99 |
+| Cartão - Linhas após Unpivot | Contagem de `Valor` | 662 | 122 | 270 | 50 | 1.065 |
+| Cartão - Dezembro | Soma de `Valor` + filtro do visual `Data` = 01/12/2025 | 974 | 122 | 270 | 50 | 6,13 M |
+| Linhas - evolução no ano | Eixo X `Data` (só **Mês**); Eixo Y Soma de `Valor`; rótulos de dados ligados | 34 | 242 | 756 | 444 | jan 0,00 ... dez 6,13 M |
+| Segmentação - Designação | `Designação SNC` (ou `Conta - Designação`); estilo **Lista pendente**; pesquisa ligada | 826 | 242 | 420 | 160 | `Caixa` -> cartão 15 000,05 |
+| Barras - por classe SNC | Eixo Y `Classe SNC`; Eixo X Soma de `Valor`; ordenar por `Classe SNC` | 826 | 478 | 420 | 208 | 8 barras; 5 e 7 negativas |
+
+No gráfico por classe, as classes 5 (Capital) e 7 (Rendimentos) ficam **negativas**: num
+balancete os créditos têm sinal negativo. O Power BI desenha-as para a esquerda do zero
+automaticamente.
+
 ## Evidências
 Guardar em [`evidencias/`](evidencias/):
 - `01-unpivot-power-query.png` - consulta com os passos aplicados e as colunas Conta SNC, Designação SNC, Data, Valor
