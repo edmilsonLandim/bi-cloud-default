@@ -173,6 +173,8 @@ Atenção: `Anos` é um número inteiro, por isso o Power BI tenta **somá-lo** 
 
 ## Estado
 - [x] Pré-teste - concluído
-- [ ] Lab síncrono
+- [x] Lab síncrono - `OA3 - Lab Síncrono.pbix` (páginas Parte A e Parte B), publicado no
+  Power BI Service; código M em `lab-sincrono/power-query-parte-a.m` e `-parte-b.m`;
+  evidências em [`lab-sincrono/evidencias/`](lab-sincrono/evidencias/)
 - [ ] Lab assíncrono
 - [ ] Pós-teste
