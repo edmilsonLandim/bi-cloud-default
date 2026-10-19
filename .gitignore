@@ -12,3 +12,6 @@
 *.tmp
 /*/oa-*/lab-*/*.csv
 /*/oa-*/lab-*/csv/
+/*/oa-*/lab-*/*/*.xlsx
+/*/oa-*/lab-*/*/*.txt
+/*/oa-*/lab-*/*/*.xml
