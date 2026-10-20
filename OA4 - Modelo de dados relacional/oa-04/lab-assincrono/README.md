@@ -93,6 +93,30 @@ in
 4. **Publicar** -> "A minha área de trabalho".
 5. Submeter o `.pbix` no Moodle.
 
+## Dashboard da página Categories (identidade Skodji Digital)
+Ficheiros em [`dashboard/`](dashboard/): `fundo-categories.png`, `mockup-categories.png`
+e `tema-skodji.json` (o mesmo do OA3, com a 3.ª cor amarela). Na página **Categories**:
+**Ver -> Temas -> Procurar temas**; **Formatar página -> Fundo da tela -> Imagem**,
+Ajuste **Ajustar**, Transparência **0%**; em cada visual desligar **Título** e **Fundo**.
+
+| Visual | Campos | X | Y | Largura | Altura | Valor esperado |
+|---|---|---|---|---|---|---|
+| Cartão - Vendas | Soma de `Sales[SalesAmount]` (Milhões, 2 casas) | 38 | 122 | 270 | 50 | 335,98 M |
+| Cartão - Custo total | Soma de `Sales[TotalCost]` | 350 | 122 | 270 | 50 | 92,24 M |
+| Cartão - Categorias | Contagem de `Categories[Category]` | 662 | 122 | 270 | 50 | 8 |
+| Cartão - Marcas | Contagem (Distinta) de `Products[BrandName]` | 974 | 122 | 270 | 50 | 10 |
+| **Barras - SalesAmount por categoria** (pedido) | Eixo Y `Categories[Category]`; Eixo X Soma de `SalesAmount`; ordenar decrescente; rótulos de dados | 34 | 242 | 756 | 444 | 6 barras, Computers 131,98 M |
+| **Segmentação - BrandName** (pedido) | `Products[BrandName]`; estilo **Lista vertical**; pesquisa ligada (`...` -> Pesquisar) | 826 | 242 | 420 | 160 | 10 marcas |
+| Barras - Top 5 subcategorias | Eixo Y `SubCategories[ProductSubcategoryName]`; Eixo X Soma de `SalesAmount`; filtro do visual **N Principais = 5** por SalesAmount | 826 | 478 | 420 | 208 | Camcorders 49,27 M ... Home Theater System 28,40 M |
+
+Notas:
+- A segmentação e os cartões filtram-se uns aos outros: ao escolher **Contoso**, o
+  cartão Vendas passa a **60,02 M** e as barras mostram Computers 16,36 M no topo.
+  O cartão Categorias fica sempre 8 (a tabela `Categories` não é filtrada pelas marcas,
+  porque o filtro só desce das dimensões para os factos).
+- O texto "Games and Toys e Home Appliances não têm vendas" só existe no mockup, como
+  explicação. Pode acrescentá-lo com uma **Caixa de texto**.
+
 ## Evidências
 Guardar em [`evidencias/`](evidencias/):
 - `01-modelo.png` - Vista de Modelo com as 6 tabelas e as relações
