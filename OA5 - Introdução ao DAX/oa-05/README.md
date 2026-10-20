@@ -163,6 +163,7 @@ de Faturação por ano e trimestre.
 
 ## Estado
 - [x] Pré-teste - concluído
-- [ ] Lab síncrono
+- [x] Lab síncrono - `OA5 - Lab Síncrono.pbix` (Calendar, GM_Product, ABC, cores por ano),
+  publicado; evidências em [`lab-sincrono/evidencias/`](lab-sincrono/evidencias/)
 - [ ] Lab assíncrono
 - [x] Pós-teste - concluído
