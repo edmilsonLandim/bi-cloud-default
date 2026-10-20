@@ -139,7 +139,7 @@ Guardar em [`evidencias/`](evidencias/):
 - `04-submissao-moodle.png` - submissão no Moodle
 
 ## Estado
-- [ ] Parte 1 - `Categories` importada e relacionada com `SubCategories`
-- [ ] Parte 2 - página Categories, gráfico de barras e segmentação por BrandName
-- [ ] Publicado no Power BI Service
+- [x] Parte 1 - `Categories` importada e relacionada com `SubCategories` ([`EdmilsonLandim_20-10-2026.pbix`](EdmilsonLandim_20-10-2026.pbix))
+- [x] Parte 2 - página Categories, gráfico de barras e segmentação por BrandName
+- [x] Publicado no Power BI Service
 - [ ] Submetido no Moodle
