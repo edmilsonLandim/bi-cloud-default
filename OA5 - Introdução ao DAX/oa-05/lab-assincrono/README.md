@@ -143,6 +143,11 @@ visuais sem título nem fundo.
 | Barras - Faturação por produto | Eixo Y `ID Produto`; Eixo X Soma de `Faturação Total` | 826 | 242 | 420 | 160 | P001 3.275 € ... P003 3.135 € |
 | Colunas - Margem por mês | Eixo X `Mês Nome`; Eixo Y Soma de `Margem de Lucro` | 826 | 478 | 420 | 208 | Jan 1.160 € ... Dez 900 €, de Jan a Dez |
 
+Cores do gráfico principal como no mockup (2025 azul, 2026 ciano): nova coluna em
+`Calendario` -> `Cor Ano = IF ( MOD ( Calendario[Ano], 2 ) = 1, "#1E55A2", "#32B2E7" )`;
+no gráfico **Formatar visual -> Colunas -> Cor -> fx** -> **Valor do campo** ->
+`Calendario[Cor Ano]` -> resumo **Primeiro**. Ocultar `Cor Ano`.
+
 O último gráfico prova a Parte 3.5: sem **Ordenar por coluna**, os meses aparecem por
 ordem alfabética (Abr, Ago, Dez, Fev...).
 

@@ -144,8 +144,17 @@ com o fundo (**Ajustar**, transparência 0%), visuais sem título nem fundo:
 | Anel - produtos por classe | Legenda `ABC`; Valores Contagem de `ProductKey` | 826 | 242 | 420 | 160 | A 3,2% / B 49,1% / C 47,8% |
 | Barras - vendas por classe | Eixo Y `ABC`; Eixo X Soma de `SalesAmount` | 826 | 478 | 420 | 208 | B 216,36 M |
 
-No mockup os anos alternam entre azul e ciano só por legibilidade; no Power BI as
-colunas ficam da mesma cor, a não ser que use **Formatar -> Colunas -> Cor -> fx**.
+Cores alternadas por ano (como no mockup): nova coluna em `Calendar`
+
+```dax
+Cor Ano =
+// Anos ímpares azul, anos pares ciano (2021 azul, 2022 ciano, ...)
+IF ( MOD ( Calendar[Year], 2 ) = 1, "#1E55A2", "#32B2E7" )
+```
+
+Gráfico -> **Formatar visual -> Colunas -> Cor -> fx** -> Estilo de formato **Valor do
+campo**, campo `Calendar[Cor Ano]`, resumo **Primeiro** -> OK. Só funciona sem campo em
+**Legenda** e com uma única medida no Eixo Y. Ocultar `Cor Ano` na vista de relatório.
 
 ## Lab assíncrono
 Enunciado e guia: [`lab-assincrono/README.md`](lab-assincrono/README.md) - LusaTech:
