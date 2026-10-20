@@ -85,13 +85,23 @@ Em 2026 dá 01/01/2021 a 31/12/2027 = **2 556 dias** (as vendas vão de 2021 a 2
 `[Date]` -> tipo **Data**. Depois, **Ferramentas de tabela -> Marcar como tabela de
 datas** -> `Date`.
 
-Colunas calculadas em `Calendar`:
+Colunas calculadas em `Calendar` - **uma fórmula de cada vez**: Ferramentas de tabela ->
+**Nova coluna** -> colar uma só linha -> Enter; repetir 5 vezes (colar várias linhas na
+mesma barra dá "A sintaxe está incorreta"):
 
 ```dax
 Year = YEAR ( Calendar[Date] )
+```
+```dax
 Month Num = MONTH ( Calendar[Date] )
+```
+```dax
 Month Name = FORMAT ( Calendar[Date], "MMM", "pt-PT" )
+```
+```dax
 Quarter = "T" & QUARTER ( Calendar[Date] )
+```
+```dax
 Semester = IF ( MONTH ( Calendar[Date] ) <= 6, "S1", "S2" )
 ```
 
