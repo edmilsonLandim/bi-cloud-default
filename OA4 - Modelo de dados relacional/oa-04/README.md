@@ -106,7 +106,8 @@ a relação falta ou tem a direção errada.
   `Categories` ao modelo do lab síncrono
 
 ## Estado
-- [ ] Pré-teste
-- [ ] Lab síncrono
+- [x] Pré-teste - concluído
+- [x] Lab síncrono - modelo com 5 tabelas e 4 relações 1:* (direção única, chaves do lado
+  "muitos" ocultas); evidência em [`lab-sincrono/evidencias/`](lab-sincrono/evidencias/)
 - [ ] Lab assíncrono
 - [x] Pós-teste - concluído
