@@ -70,6 +70,20 @@ in
     #"Tipo alterado"
 ```
 
+### Problema encontrado e resolvido: tudo em "(Vazio)"
+Sintoma: o gráfico mostrava uma só barra **(Vazio)** com os 336 M. A relação existia, mas
+nenhuma chave coincidia. Causa: no lab síncrono, a consulta `SubCategories` tinha ficado
+**sem `ProductSubcategoryKey`** (só 2 colunas) e a coluna chamada `ProductCategoryKey` não
+continha as chaves das categorias. Correção: refazer a consulta com as 3 colunas
+(`ProductSubcategoryKey`, `ProductSubcategoryName`, `ProductCategoryKey`, todas Texto) -
+código em [`../lab-sincrono/power-query-subcategories.m`](../lab-sincrono/power-query-subcategories.m) -
+e confirmar as relações `SubCategories[ProductSubcategoryKey]` -> `Products` e
+`Categories` -> `SubCategories[ProductCategoryKey]`.
+
+Lição: numa dimensão, a chave do lado 1 tem de ser **única** (Ver -> Distribuição de
+colunas: "44 distintos, 44 únicos"). Testar cada relação com um visual simples logo
+depois de a criar.
+
 ## Parte 2 - Relatório
 1. Botão **+** no fundo -> nova página -> duplo clique -> **Categories**.
 2. **Gráfico de barras agrupadas**: Eixo Y `Categories[Category]`; Eixo X Soma de
