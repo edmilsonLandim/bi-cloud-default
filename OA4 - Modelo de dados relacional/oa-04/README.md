@@ -109,5 +109,5 @@ a relação falta ou tem a direção errada.
 - [x] Pré-teste - concluído
 - [x] Lab síncrono - modelo com 5 tabelas e 4 relações 1:* (direção única, chaves do lado
   "muitos" ocultas); evidência em [`lab-sincrono/evidencias/`](lab-sincrono/evidencias/)
-- [ ] Lab assíncrono
+- [x] Lab assíncrono - submetido no Moodle a 20/10/2026 (Categories + página Categories)
 - [x] Pós-teste - concluído

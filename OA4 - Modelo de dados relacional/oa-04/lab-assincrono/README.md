@@ -133,7 +133,6 @@ Notas:
 
 ## Evidências
 Guardar em [`evidencias/`](evidencias/):
-- `01-modelo.png` - Vista de Modelo com as 6 tabelas e as relações
 - `02-pagina-categories.png` - página Categories com o gráfico e a segmentação
 - `03-publicar-sucesso.png` - publicação no Power BI Service
 - `04-submissao-moodle.png` - submissão no Moodle
@@ -142,4 +141,4 @@ Guardar em [`evidencias/`](evidencias/):
 - [x] Parte 1 - `Categories` importada e relacionada com `SubCategories` ([`EdmilsonLandim_20-10-2026.pbix`](EdmilsonLandim_20-10-2026.pbix))
 - [x] Parte 2 - página Categories, gráfico de barras e segmentação por BrandName
 - [x] Publicado no Power BI Service
-- [ ] Submetido no Moodle
+- [x] Submetido no Moodle - 20/10/2026 15:58, 31 dias antes do prazo
