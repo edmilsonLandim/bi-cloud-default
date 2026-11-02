@@ -11,7 +11,7 @@
 |---|---|
 | Pré-teste | concluído |
 | Lab síncrono | concluído |
-| Lab assíncrono | abriu 20/10/2026 19:45 - prazo 20/11/2026 23:59 |
+| Lab assíncrono | concluído (submetido no Moodle 02/11/2026) |
 | Pós-teste | concluído |
 
 ## Conceitos da aula
@@ -48,5 +48,5 @@ e página **Matriz**.
 ## Estado
 - [x] Pré-teste - concluído
 - [x] Lab síncrono - concluído
-- [x] Lab assíncrono - medidas, YoY, % do total e página Matriz; publicado (falta submeter no Moodle)
+- [x] Lab assíncrono - medidas, YoY, % do total e página Matriz; publicado e submetido no Moodle (02/11/2026)
 - [x] Pós-teste - concluído

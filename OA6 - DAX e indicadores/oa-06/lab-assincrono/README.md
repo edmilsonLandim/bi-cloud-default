@@ -140,4 +140,4 @@ Guardar em [`evidencias/`](evidencias/):
 - [x] Parte 3 - Faturação Ano Anterior, Variação Homóloga % (2026: -71,14%)
 - [x] Parte 4 - % Faturação Total (2025 77,60% / 2026 22,40%)
 - [x] Parte 5 - página Matriz (cores por regra) e análise; publicado no Power BI Service
-- [ ] Submetido no Moodle
+- [x] Submetido no Moodle (02/11/2026 16:57) - [`evidencias/04-submissao-moodle.png`](evidencias/04-submissao-moodle.png)
