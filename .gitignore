@@ -16,3 +16,5 @@
 /*/oa-*/lab-*/*/*.txt
 /*/oa-*/lab-*/*/*.xml
 /*/oa-*/lab-*/Modelo *.pbix
+/*/oa-*/lab-*/*Exercicio resolvido*.pbix
+__pycache__/
