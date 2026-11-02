@@ -11,7 +11,7 @@
 |---|---|
 | Pré-teste | concluído |
 | Lab síncrono | ver abaixo |
-| Lab assíncrono | prazo 20/11/2026 23:59 |
+| Lab assíncrono | concluído (submetido no Moodle 02/11/2026) |
 | Pós-teste | concluído |
 
 ## Conceitos da aula
@@ -165,5 +165,5 @@ de Faturação por ano e trimestre.
 - [x] Pré-teste - concluído
 - [x] Lab síncrono - `OA5 - Lab Síncrono.pbix` (Calendar, GM_Product, ABC, cores por ano),
   publicado; evidências em [`lab-sincrono/evidencias/`](lab-sincrono/evidencias/)
-- [ ] Lab assíncrono
+- [x] Lab assíncrono - `EdmilsonLandim-02-11-2026.pbix`, publicado e submetido no Moodle
 - [x] Pós-teste - concluído
