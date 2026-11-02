@@ -75,7 +75,7 @@ DIVIDE ( [Total Faturação], CALCULATE ( [Total Faturação], ALL ( Calendario 
 |---|---|---|---|---|
 | **2025** | **12.455 €** | | | **77,60%** |
 | Jan ... Dez 2025 | 905 € ... 1.550 € | | | 5,64% ... 9,66% |
-| **2026** | **3.595 €** | **12.455 €** | **-71,13%** | **22,40%** |
+| **2026** | **3.595 €** | **12.455 €** | **-71,14%** | **22,40%** |
 | Jan | 1.040 € | 905 € | **14,92%** | 6,48% |
 | Fev | 585 € | 625 € | -6,40% | 3,64% |
 | Mar | 865 € | 1.035 € | -16,43% | 5,39% |
@@ -90,7 +90,7 @@ DIVIDE ( [Total Faturação], CALCULATE ( [Total Faturação], ALL ( Calendario 
 - **2025 não tem ano anterior:** o `Calendario` começa em 01/01/2025 e não há vendas de 2024,
   por isso `Faturação Ano Anterior` e `Variação Homóloga %` ficam vazias (o DIVIDE evita o
   erro de divisão por zero).
-- **O -71,13% de 2026 engana:** compara 2026 até maio (os dados acabam em 03/05/2026) com o
+- **O -71,14% de 2026 engana:** compara 2026 até maio (os dados acabam em 03/05/2026) com o
   ano de 2025 completo. Comparando o mesmo período, Jan-Mai 2026 (3.595 €) vs. Jan-Mai 2025
   (5.280 €), a quebra real é de **-31,9%**. Mesmo assim é quebra: só janeiro cresceu
   (+14,92%) e a descida acentua-se de mês para mês até maio (-72,83%).
@@ -135,9 +135,9 @@ Guardar em [`evidencias/`](evidencias/):
 - `03-publicar-sucesso.png` / `04-submissao-moodle.png`
 
 ## Estado
-- [ ] Parte 1 - tabela `_Medidas`
-- [ ] Parte 2 - Total Faturação, Total Custo, Total Margem; Coluna 1 eliminada
-- [ ] Parte 3 - Faturação Ano Anterior, Variação Homóloga % (percentagem)
-- [ ] Parte 4 - % Faturação Total (percentagem)
-- [ ] Parte 5 - página Matriz e análise
+- [x] Parte 1 - tabela `_Medidas` ([`EdmilsonLandim-02-11-2026 oa-06.pbix`](EdmilsonLandim-02-11-2026%20oa-06.pbix))
+- [x] Parte 2 - Total Faturação (16.050 €), Total Custo, Total Margem (9.645 €); Coluna 1 eliminada
+- [x] Parte 3 - Faturação Ano Anterior, Variação Homóloga % (2026: -71,14%)
+- [x] Parte 4 - % Faturação Total (2025 77,60% / 2026 22,40%)
+- [x] Parte 5 - página Matriz (cores por regra) e análise; publicado no Power BI Service
 - [ ] Submetido no Moodle

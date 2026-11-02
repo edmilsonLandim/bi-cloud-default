@@ -22,7 +22,7 @@ args = ("LusaTech - Medidas DAX", "Skodji Digital  ·  Upskilling BI & Cloud  ·
 
 def linhas():
     out = [(0, ["+ 2025", EUR(12455), "", "", PCT(77.60)], {}, True),
-           (0, ["- 2026", EUR(3595), EUR(12455), "-71,13%", PCT(22.40)], {3: VERMELHO}, True)]
+           (0, ["- 2026", EUR(3595), EUR(12455), "-71,14%", PCT(22.40)], {3: VERMELHO}, True)]
     for i, m in enumerate(MESES):
         v, p = f26[i], f25[i]
         yoy = (v - p) / p * 100
