@@ -165,4 +165,4 @@ Guardar em [`evidencias/`](evidencias/):
 - [x] Parte 3 - Ano, Mês Num, Mês Nome (ordenado), Trimestre
 - [x] Parte 4 - Custo Total (6.405 €), Faturação Total (16.050 €), Margem de Lucro (9.645 €)
 - [x] Parte 5 - relação e página Faturação; publicado no Power BI Service
-- [x] Submetido no Moodle (02/11/2026)
+- [x] Submetido no Moodle (02/11/2026 14:48) - [`evidencias/06-submissao-moodle.png`](evidencias/06-submissao-moodle.png)
