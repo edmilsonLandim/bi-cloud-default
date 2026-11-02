@@ -48,5 +48,5 @@ e página **Matriz**.
 ## Estado
 - [x] Pré-teste - concluído
 - [x] Lab síncrono - concluído
-- [ ] Lab assíncrono
+- [x] Lab assíncrono - medidas, YoY, % do total e página Matriz; publicado (falta submeter no Moodle)
 - [x] Pós-teste - concluído
