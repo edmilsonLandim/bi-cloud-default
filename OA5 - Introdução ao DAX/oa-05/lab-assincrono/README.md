@@ -160,9 +160,9 @@ Guardar em [`evidencias/`](evidencias/):
 - `05-publicar-sucesso.png` / `06-submissao-moodle.png` (se o Moodle pedir publicação)
 
 ## Estado
-- [ ] Parte 1 - importação Web e tabela `Vendas`
-- [ ] Parte 2 - `Calendario` em DAX, marcada como tabela de datas
-- [ ] Parte 3 - Ano, Mês Num, Mês Nome (ordenado), Trimestre
-- [ ] Parte 4 - Custo Total, Faturação Total, Margem de Lucro
-- [ ] Parte 5 - relação e página Faturação
+- [x] Parte 1 - importação Web e tabela `Vendas` ([`EdmilsonLandim-02-11-2026.pbix`](EdmilsonLandim-02-11-2026.pbix))
+- [x] Parte 2 - `Calendario` em DAX (730 dias), marcada como tabela de datas
+- [x] Parte 3 - Ano, Mês Num, Mês Nome (ordenado), Trimestre
+- [x] Parte 4 - Custo Total (6.405 €), Faturação Total (16.050 €), Margem de Lucro (9.645 €)
+- [x] Parte 5 - relação e página Faturação; publicado no Power BI Service
 - [ ] Submetido no Moodle
