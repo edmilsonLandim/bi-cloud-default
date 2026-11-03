@@ -148,9 +148,9 @@ Guardar em [`evidencias/`](evidencias/):
 - `04-publicar-sucesso.png` / `05-submissao-moodle.png`
 
 ## Estado
-- [ ] Parte 1 - página `Tooltip_Produto` (oculta, Descrição, 350 px) ligada ao gráfico da Faturação
-- [ ] Parte 2 - `Ranking Vendas` (RANKX + ALL) e página Produtos
-- [ ] Parte 3 - gradiente em Total Faturação; ícones em Variação Homóloga %
-- [ ] Parte 4 - Word Cloud (AppSource) na página Produtos
+- [x] Parte 1 - página `Tooltip_Produto` (oculta, Descrição, 350 px) ligada ao gráfico da Faturação ([`EdmilsonLandim-03-11-2026.pbix`](EdmilsonLandim-03-11-2026.pbix))
+- [x] Parte 2 - `Ranking Vendas` (RANKX + ALL) e página Produtos
+- [x] Parte 3 - gradiente em Total Faturação; ícones em Variação Homóloga %
+- [x] Parte 4 - Word Cloud (AppSource) na página Produtos
 - [ ] Publicado no Power BI Service
 - [ ] Submetido no Moodle
