@@ -11,7 +11,7 @@
 |---|---|
 | Pré-teste | concluído |
 | Lab síncrono | concluído |
-| Lab assíncrono | abriu 22/10/2026 19:45 - prazo 20/11/2026 23:59 |
+| Lab assíncrono | concluído (submetido no Moodle 03/11/2026) |
 | Pós-teste | concluído |
 
 ## Conceitos da aula
@@ -50,5 +50,5 @@ de descrição `Tooltip_Produto`, `Ranking Vendas` com RANKX, gradiente e ícone
 ## Estado
 - [x] Pré-teste - concluído
 - [x] Lab síncrono - concluído
-- [ ] Lab assíncrono
+- [x] Lab assíncrono - `EdmilsonLandim-03-11-2026.pbix` (tooltip, ranking, formatação condicional, Word Cloud); publicado e submetido no Moodle (03/11/2026)
 - [x] Pós-teste - concluído

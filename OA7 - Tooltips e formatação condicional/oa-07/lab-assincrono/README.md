@@ -152,5 +152,5 @@ Guardar em [`evidencias/`](evidencias/):
 - [x] Parte 2 - `Ranking Vendas` (RANKX + ALL) e página Produtos
 - [x] Parte 3 - gradiente em Total Faturação; ícones em Variação Homóloga %
 - [x] Parte 4 - Word Cloud (AppSource) na página Produtos
-- [ ] Publicado no Power BI Service
-- [ ] Submetido no Moodle
+- [x] Publicado no Power BI Service - [`evidencias/04-publicar-sucesso.png`](evidencias/04-publicar-sucesso.png)
+- [x] Submetido no Moodle (03/11/2026 16:15) - [`evidencias/05-submissao-moodle.png`](evidencias/05-submissao-moodle.png)
