@@ -18,3 +18,5 @@
 /*/oa-*/lab-*/Modelo *.pbix
 /*/oa-*/lab-*/*Exercicio resolvido*.pbix
 __pycache__/
+*.pbiviz
+/*/oa-*/Visual Chart Guide.pdf
