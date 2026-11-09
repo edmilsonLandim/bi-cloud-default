@@ -9,7 +9,7 @@
 |---|---|
 | Pré-teste | concluído |
 | Lab síncrono | concluído |
-| Lab assíncrono | prazo 20/11/2026 23:59 |
+| Lab assíncrono | concluído (submetido no Moodle 09/11/2026) |
 | Pós-teste | concluído |
 
 ## Conceitos da aula
@@ -41,5 +41,5 @@ de campo `Métrica a Analisar`, cores das colunas pela `Variação Homóloga %` 
 ## Estado
 - [x] Pré-teste - concluído
 - [x] Lab síncrono - concluído
-- [ ] Lab assíncrono
+- [x] Lab assíncrono - `EdmilsonLandim-09-11-2026.pbix` (parâmetro de campo, cores por medida, What-if); publicado e submetido no Moodle (09/11/2026)
 - [x] Pós-teste - concluído
