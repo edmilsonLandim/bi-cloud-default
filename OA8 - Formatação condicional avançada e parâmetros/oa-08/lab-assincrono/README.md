@@ -161,14 +161,14 @@ na imagem.
 
 ## Evidências
 Guardar em [`evidencias/`](evidencias/):
-- `01-parametro-campo.png` - página Faturação com a segmentação e o gráfico de linhas
-- `02-cores-variacao.png` - gráfico de colunas com 2026 a vermelho
+- `01-parametro-campo-e-cores.png` - página Faturação: segmentação, gráfico de linhas e
+  colunas com 2026 a vermelho
 - `03-simulacao.png` - página Simulação (com o deslizador em 10% ou 15%)
 - `04-publicar-sucesso.png` / `05-submissao-moodle.png`
 
 ## Estado
-- [ ] Parte 1 - parâmetro de campo `Métrica a Analisar` (seleção única) + gráfico de linhas
-- [ ] Parte 2 - cores das colunas por `Variação Homóloga %` (regras, tipo Número)
-- [ ] Parte 3 - parâmetro `Simulação Crescimento`, medida `Faturação Simulada`, página Simulação
-- [ ] Publicado no Power BI Service
-- [ ] Submetido no Moodle
+- [x] Parte 1 - parâmetro de campo `Métrica a Analisar` (seleção única) + gráfico de linhas ([`EdmilsonLandim-09-11-2026.pbix`](EdmilsonLandim-09-11-2026.pbix))
+- [x] Parte 2 - cores das colunas por `Variação Homóloga %` (2026 T1 e T2 a vermelho)
+- [x] Parte 3 - parâmetro `Simulação Crescimento`, medida `Faturação Simulada` (17.655 € a 10%), página Simulação
+- [x] Publicado no Power BI Service - [`evidencias/04-publicar-sucesso.png`](evidencias/04-publicar-sucesso.png)
+- [x] Submetido no Moodle (09/11/2026 15:30, "Submetido para avaliação")
