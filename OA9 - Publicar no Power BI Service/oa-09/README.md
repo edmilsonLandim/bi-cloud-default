@@ -14,7 +14,7 @@
 | Pré-teste | concluído |
 | Lab síncrono | concluído |
 | Lab assíncrono | concluído (submetido no Moodle 09/11/2026) |
-| Pós-teste | por fazer |
+| Pós-teste | concluído |
 
 ## Conceitos da aula
 Resumo dos materiais de estudo nesta pasta (`Power_BI_Deployment_Blueprint_compressed.pdf`,
@@ -47,4 +47,4 @@ publicação em O meu espaço de trabalho e Publicar na Web.
 - [x] Pré-teste - concluído
 - [x] Lab síncrono - concluído
 - [x] Lab assíncrono - `EdmilsonLandim-09-11-2026-oa9.pbix` (Landing Page, navegação, páginas ocultas); publicado no Power BI Service e submetido no Moodle (09/11/2026)
-- [ ] Pós-teste
+- [x] Pós-teste - concluído
