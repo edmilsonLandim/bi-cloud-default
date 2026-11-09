@@ -108,8 +108,8 @@ Guardar em [`evidencias/`](evidencias/):
 - `07-submissao-moodle.png`
 
 ## Estado
-- [ ] Parte 1 - Landing Page (primeira, página de destino), fundo, navegador, logótipo
-- [ ] Parte 1.6 - botão Voltar em Faturação, Matriz, Produtos, Simulação
-- [ ] Parte 2 - páginas ocultas (exceto Landing Page), publicado em O meu espaço de trabalho, testado no Service
-- [ ] Parte 3 - Publicar na Web, link testado em janela anónima
-- [ ] Submetido no Moodle
+- [x] Parte 1 - Landing Page (primeira, página de destino), fundo, navegador, logótipo - [`evidencias/01-landing-page.png`](evidencias/01-landing-page.png)
+- [x] Parte 1.6 - botão Voltar em Faturação, Matriz, Produtos, Simulação
+- [x] Parte 2 - páginas ocultas (exceto Landing Page), publicado em O meu espaço de trabalho ([`EdmilsonLandim-09-11-2026-oa9.pbix`](EdmilsonLandim-09-11-2026-oa9.pbix), [`evidencias/03-publicar-sucesso.png`](evidencias/03-publicar-sucesso.png))
+- [x] Parte 3 - Publicar na Web (sem captura do link no repositório)
+- [x] Submetido no Moodle (09/11/2026 16:25) - [`evidencias/07-submissao-moodle.png`](evidencias/07-submissao-moodle.png)
