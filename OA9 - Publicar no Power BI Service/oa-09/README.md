@@ -13,7 +13,7 @@
 |---|---|
 | Pré-teste | concluído |
 | Lab síncrono | concluído |
-| Lab assíncrono | abriu 29/10/2026 19:45 - prazo 20/11/2026 23:59 |
+| Lab assíncrono | concluído (submetido no Moodle 09/11/2026) |
 | Pós-teste | por fazer |
 
 ## Conceitos da aula
@@ -46,5 +46,5 @@ publicação em O meu espaço de trabalho e Publicar na Web.
 ## Estado
 - [x] Pré-teste - concluído
 - [x] Lab síncrono - concluído
-- [ ] Lab assíncrono
+- [x] Lab assíncrono - `EdmilsonLandim-09-11-2026-oa9.pbix` (Landing Page, navegação, páginas ocultas); publicado no Power BI Service e submetido no Moodle (09/11/2026)
 - [ ] Pós-teste
