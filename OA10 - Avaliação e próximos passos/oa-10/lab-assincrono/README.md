@@ -267,6 +267,30 @@ Matriz Região x ID Motorista (Total Entregas):
 | **Segmentação** `Métrica a Analisar` | seleção única | 826 | 242 | 420 | 160 | |
 | Matriz MoM *(opcional)* | `Ano`, `Mês Nome`; `[Faturação Total]`, `[Faturação LM]`, `[Variação MoM %]`; filtro Ano = 2026 | 826 | 478 | 420 | 208 | tabela 2.2 |
 
+Medidas dos cartões opcionais (em `_Medidas`):
+
+```dax
+Faturação Média por Entrega = DIVIDE ( [Faturação Total], [Total Entregas] )
+```
+```dax
+Faturação Último Mês =
+VAR ultimaData = MAX ( Entregas[Data] )
+RETURN
+    CALCULATE (
+        [Faturação Total],
+        Calendario[Ano] = YEAR ( ultimaData ),
+        Calendario[Mês Num] = MONTH ( ultimaData )
+    )
+```
+
+- `MAX(Entregas[Data])` = 15/06/2026 (a última entrega); o `CALCULATE` soma a faturação desse
+  ano e mês: **210 €** (Moeda, 0 casas). Fica dinâmico: com novos dados passa sozinho para o
+  mês seguinte; com um filtro Ano = 2025 mostra Dez 2025 (180 €).
+- Rótulo dinâmico opcional (para não ter "JUN 2026" fixo no fundo): medida
+  `Rótulo Último Mês = "ÚLTIMO MÊS (" & UPPER ( FORMAT ( MAX ( Entregas[Data] ), "mmm yyyy", "pt-PT" ) ) & ")"`
+  -> Cartão -> **Rótulo da categoria** desligado -> **Título** ligado -> **fx** -> Valor do
+  campo -> esta medida.
+
 ## Fase 3 - UX/UI e experiência "App"
 ### 3.1 Landing Page
 [`mockup-landing.png`](dashboard/mockup-landing.png) / `fundo-landing.png`
