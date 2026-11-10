@@ -28,6 +28,6 @@ Guardar o `.pbix` em [`lab-sincrono/`](lab-sincrono/).
 - Pós-teste: 01/10/2026 19:45 - 20/11/2026 23:59
 
 ## Estado
-- [ ] Lab síncrono
-- [x] Lab assíncrono
-- [ ] Pós-teste
+- [x] Lab síncrono - [`OA1 - Lab Síncrono.pbix`](lab-sincrono/OA1%20-%20Lab%20Síncrono.pbix) (Financials sample)
+- [x] Lab assíncrono - `EdmilsonLandim_05-10-2026.pbix`, publicado e submetido no Moodle (05/10/2026)
+- [x] Pós-teste - concluído
