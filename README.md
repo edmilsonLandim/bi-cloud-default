@@ -48,7 +48,7 @@ BI Service e submetidos no Moodle) e pós-testes. OA10: projeto final "EcoLogís
 
 | Lab assíncrono | Caso | Entrega |
 |---|---|---|
-| OA1 | Dashboard Financials (dados de exemplo) | `EdmilsonLandim_05-10-2026.pbix` |
+| OA1 | Dashboard de colaboradores (`Dados Colaboradores Exemplo.xlsx`) | `EdmilsonLandim_05-10-2026.pbix` |
 | OA2 | Append das 12 folhas | submetido 07/10/2026 |
 | OA3 | Unpivot do Mapa contabilístico | submetido 16/10/2026 |
 | OA4 | Modelo floco de neve + página Categories | submetido 20/10/2026 |
