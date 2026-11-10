@@ -28,18 +28,43 @@ OAx - <tema>/
 ```
 
 ## Objetos de Aprendizagem
-| OA | Tema | Pasta |
-|----|------|-------|
-| OA1 | Introdução ao BI. Reconhecer as ferramentas Power BI Desktop, Power Query e o Power BI Service | [OA1 - Introdução ao BI](OA1%20-%20Introdução%20ao%20BI/oa-01/README.md) |
-| OA2 | Principais ferramentas de transformação e limpeza de dados. Utilizar o processo Append Queries | [OA2 - Transformação e limpeza de dados](OA2%20-%20Transformação%20e%20limpeza%20de%20dados/oa-02/README.md) |
-| OA3 | Aplicar o processo de combine files e unpivot | [OA3 - Combine files e unpivot](OA3%20-%20Combine%20files%20e%20unpivot/oa-03/README.md) |
-| OA4 | Criar um modelo de dados relacional. Outras boas práticas | [OA4 - Modelo de dados relacional](OA4%20-%20Modelo%20de%20dados%20relacional/oa-04/README.md) |
-| OA5 | Introdução ao DAX e cálculos no Power BI | [OA5 - Introdução ao DAX](OA5%20-%20Introdução%20ao%20DAX/oa-05/README.md) |
-| OA6 | Aplicar DAX ao cálculo de diferentes indicadores | [OA6 - DAX e indicadores](OA6%20-%20DAX%20e%20indicadores/oa-06/README.md) |
-| OA7 | Utilizar Tooltips para melhorar a qualidade da informação. Introdução à formatação condicional | [OA7 - Tooltips e formatação condicional](OA7%20-%20Tooltips%20e%20formatação%20condicional/oa-07/README.md) |
-| OA8 | Aplicar formatação condicional avançada. Aplicar Parâmetros para mais dinamismo | [OA8 - Formatação condicional avançada e parâmetros](OA8%20-%20Formatação%20condicional%20avançada%20e%20parâmetros/oa-08/README.md) |
-| OA9 | Publicar e partilhar relatórios no Power BI Service | [OA9 - Publicar no Power BI Service](OA9%20-%20Publicar%20no%20Power%20BI%20Service/oa-09/README.md) |
-| OA10 | Avaliação e próximos passos | [OA10 - Avaliação e próximos passos](OA10%20-%20Avaliação%20e%20próximos%20passos/oa-10/README.md) |
+| OA | Tema | Pasta | Estado |
+|----|------|-------|--------|
+| OA1 | Introdução ao BI. Reconhecer as ferramentas Power BI Desktop, Power Query e o Power BI Service | [OA1 - Introdução ao BI](OA1%20-%20Introdução%20ao%20BI/oa-01/README.md) | concluído - lab assíncrono submetido 05/10/2026 |
+| OA2 | Principais ferramentas de transformação e limpeza de dados. Utilizar o processo Append Queries | [OA2 - Transformação e limpeza de dados](OA2%20-%20Transformação%20e%20limpeza%20de%20dados/oa-02/README.md) | concluído - lab assíncrono submetido 07/10/2026 |
+| OA3 | Aplicar o processo de combine files e unpivot | [OA3 - Combine files e unpivot](OA3%20-%20Combine%20files%20e%20unpivot/oa-03/README.md) | concluído - lab assíncrono submetido 16/10/2026 |
+| OA4 | Criar um modelo de dados relacional. Outras boas práticas | [OA4 - Modelo de dados relacional](OA4%20-%20Modelo%20de%20dados%20relacional/oa-04/README.md) | concluído - lab assíncrono submetido 20/10/2026 |
+| OA5 | Introdução ao DAX e cálculos no Power BI | [OA5 - Introdução ao DAX](OA5%20-%20Introdução%20ao%20DAX/oa-05/README.md) | concluído - lab assíncrono submetido 02/11/2026 |
+| OA6 | Aplicar DAX ao cálculo de diferentes indicadores | [OA6 - DAX e indicadores](OA6%20-%20DAX%20e%20indicadores/oa-06/README.md) | concluído - lab assíncrono submetido 02/11/2026 |
+| OA7 | Utilizar Tooltips para melhorar a qualidade da informação. Introdução à formatação condicional | [OA7 - Tooltips e formatação condicional](OA7%20-%20Tooltips%20e%20formatação%20condicional/oa-07/README.md) | concluído - lab assíncrono submetido 03/11/2026 |
+| OA8 | Aplicar formatação condicional avançada. Aplicar Parâmetros para mais dinamismo | [OA8 - Formatação condicional avançada e parâmetros](OA8%20-%20Formatação%20condicional%20avançada%20e%20parâmetros/oa-08/README.md) | concluído - lab assíncrono submetido 09/11/2026 |
+| OA9 | Publicar e partilhar relatórios no Power BI Service | [OA9 - Publicar no Power BI Service](OA9%20-%20Publicar%20no%20Power%20BI%20Service/oa-09/README.md) | concluído - lab assíncrono submetido 09/11/2026 |
+| OA10 | Avaliação e próximos passos | [OA10 - Avaliação e próximos passos](OA10%20-%20Avaliação%20e%20próximos%20passos/oa-10/README.md) | concluído - projeto final submetido 10/11/2026 |
+
+## Estado do módulo
+**Concluído.** OA1 a OA9: pré-testes, labs síncronos, labs assíncronos (publicados no Power
+BI Service e submetidos no Moodle) e pós-testes. OA10: projeto final "EcoLogística S.A."
+(`EdmilsonLandim-10-11-2026.pbix`) submetido a 10/11/2026 e ressubmetido com as correções.
+
+| Lab assíncrono | Caso | Entrega |
+|---|---|---|
+| OA1 | Dashboard Financials (dados de exemplo) | `EdmilsonLandim_05-10-2026.pbix` |
+| OA2 | Append das 12 folhas | submetido 07/10/2026 |
+| OA3 | Unpivot do Mapa contabilístico | submetido 16/10/2026 |
+| OA4 | Modelo floco de neve + página Categories | submetido 20/10/2026 |
+| OA5 | LusaTech: dados web, Calendario, colunas calculadas | `EdmilsonLandim-02-11-2026.pbix` |
+| OA6 | LusaTech: `_Medidas`, YoY, % do total, Matriz | `EdmilsonLandim-02-11-2026 oa-06.pbix` |
+| OA7 | LusaTech: tooltip, RANKX, formatação condicional, Word Cloud | `EdmilsonLandim-03-11-2026.pbix` |
+| OA8 | LusaTech: parâmetro de campo, cores por medida, What-if | `EdmilsonLandim-09-11-2026.pbix` |
+| OA9 | LusaTech: "App" com Landing Page, navegação, publicação | `EdmilsonLandim-09-11-2026-oa9.pbix` |
+| OA10 | Projeto final EcoLogística S.A. | `EdmilsonLandim-10-11-2026.pbix` |
+
+## Ferramentas
+[`ferramentas/`](ferramentas/): `skodji_dashboard.py` (biblioteca dos fundos e mockups com a
+identidade Skodji Digital, 1280 x 720 exportado a 1920 x 1080), `gerar_oa6.py` a
+`gerar_oa10.py` (um gerador por OA) e os logótipos `icone.png` / `logo_skodji.png`.
+Os materiais do formador (enunciados, dados, `.pbix` modelo, manual) ficam fora do Git
+(`.gitignore`).
 
 ## Sessões síncronas (16:15 - 20:15)
 Link da reunião: https://meet.google.com/tfv-rsdh-jpq
