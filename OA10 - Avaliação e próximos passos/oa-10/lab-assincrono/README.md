@@ -365,7 +365,7 @@ Guardar em [`evidencias/`](evidencias/):
 - [x] Submetido no Moodle (10/11/2026 15:54) - [`09`](evidencias/09-submissao-moodle.png)
 
 Correções recomendadas antes do prazo (Moodle -> **Editar submissão** até 20/11/2026):
-- [ ] Simulação: o cartão **Total Entregas** mostra **10** (deve ser **31**): usar a medida `[Total Entregas]`
-- [ ] Produtos e Motoristas: **Ranking** por região (1, 1, 1, 2...): trocar para `ALL ( Motoristas )` (secção 2.3)
+- [x] Simulação: o cartão **Total Entregas** mostra **10** (deve ser **31**): usar a medida `[Total Entregas]`
+- [x] Produtos e Motoristas: **Ranking** por região (1, 1, 1, 2...): trocar para `ALL ( Motoristas )` (secção 2.3) - [`05b`](evidencias/05b-ranking-corrigido.png)
 - [ ] Simulação: matriz MoM com Jul 2026 a -100%: filtro `Faturação Total` não está em branco
 - [ ] Opcionais: cartão de várias linhas com **Unidades de apresentação = Nenhuma** (6.060,00 € em vez de 6 K €); medida `Distância Total = SUM ( Entregas[Distância Percorrida (km)] )` em vez da soma implícita
