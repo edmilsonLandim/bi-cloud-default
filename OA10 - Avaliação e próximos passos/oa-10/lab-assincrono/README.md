@@ -150,6 +150,8 @@ RETURN DIVIDE ( [Faturação Total] - lm, lm )
 - `Faturação LM` (*Last Month*) = faturação do mês anterior; `Variação MoM %` = a variação
   pedida (formato Percentagem, 2 casas). O `VAR` calcula o mês anterior uma só vez (OA9:
   performance com variáveis).
+- O `Calendario` vai até Dez 2026: Jul 2026 aparece com Faturação LM 210 € e -100%. Na
+  matriz, juntar o filtro do visual **`Faturação Total` não está em branco**.
 - Só dá valores certos num visual com **Ano e Mês** (ou com filtro de ano). Com `Mês Nome`
   sozinho, cada mês junta 2024, 2025 e 2026.
 
@@ -172,9 +174,13 @@ Conferir numa matriz com `Ano` e `Mês Nome`:
 Ranking Motoristas =
 IF (
     ISINSCOPE ( Motoristas[Nome] ),
-    RANKX ( ALL ( Motoristas[Nome] ), [Total Entregas], , DESC, Dense )
+    RANKX ( ALL ( Motoristas ), [Total Entregas], , DESC, Dense )
 )
 ```
+
+`ALL ( Motoristas )` e não `ALL ( Motoristas[Nome] )`: numa tabela que também tem `Região`,
+o `ALL` só da coluna Nome deixa o filtro da região ativo e o ranking passa a ser **dentro de
+cada região** (Elsa 1, Diogo 1, Ana 1, Carla 2...). Com a tabela inteira, o ranking é global.
 
 | Ranking | Motorista | Região | Entregas |
 |---|---|---|---|
@@ -351,9 +357,15 @@ Guardar em [`evidencias/`](evidencias/):
 - `08-publicar-sucesso.png`, `09-submissao-moodle.png`
 
 ## Estado
-- [ ] Fase 1 - importação, Calendario (2024-2026), modelo em estrela, `_Medidas` + 3 medidas base
-- [ ] Fase 2 - Margem, % Atrasos, Faturação LM / Variação MoM %, Ranking, parâmetro de campo
-- [ ] Parte 3 - páginas Análise Financeira, Produtos e Motoristas, Simulação
-- [ ] Fase 3 - Landing Page, botões Voltar, tooltip personalizada ligada às barras
-- [ ] Fase 4 - páginas ocultas, publicado em O meu espaço de trabalho
-- [ ] Submetido no Moodle
+- [x] Fase 1 - importação, Calendario (2024-2026), modelo em estrela, `_Medidas` + 3 medidas base ([`EdmilsonLandim-10-11-2026.pbix`](EdmilsonLandim-10-11-2026.pbix))
+- [x] Fase 2 - Margem, % Atrasos, Faturação LM / Variação MoM %, Ranking, parâmetro de campo
+- [x] Parte 3 - páginas Análise Financeira, Produtos e Motoristas, Simulação ([`04`](evidencias/04-analise-financeira.png), [`05`](evidencias/05-produtos-motoristas.png), [`06`](evidencias/06-simulacao.png))
+- [x] Fase 3 - Landing Page ([`03`](evidencias/03-landing-page.png)), botão Início no logótipo Skodji ([`07b`](evidencias/07b-botao-inicio-logo.png)), tooltip ligada às barras ([`07`](evidencias/07-tooltip.png))
+- [x] Fase 4 - páginas ocultas, publicado em O meu espaço de trabalho ([`08`](evidencias/08-publicar-sucesso.png))
+- [x] Submetido no Moodle (10/11/2026 15:54) - [`09`](evidencias/09-submissao-moodle.png)
+
+Correções recomendadas antes do prazo (Moodle -> **Editar submissão** até 20/11/2026):
+- [ ] Simulação: o cartão **Total Entregas** mostra **10** (deve ser **31**): usar a medida `[Total Entregas]`
+- [ ] Produtos e Motoristas: **Ranking** por região (1, 1, 1, 2...): trocar para `ALL ( Motoristas )` (secção 2.3)
+- [ ] Simulação: matriz MoM com Jul 2026 a -100%: filtro `Faturação Total` não está em branco
+- [ ] Opcionais: cartão de várias linhas com **Unidades de apresentação = Nenhuma** (6.060,00 € em vez de 6 K €); medida `Distância Total = SUM ( Entregas[Distância Percorrida (km)] )` em vez da soma implícita
