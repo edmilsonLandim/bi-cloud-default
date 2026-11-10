@@ -48,4 +48,4 @@ campo, Landing Page, tooltip personalizada e publicação.
 | Power BI Training | Tutoriais e novidades | <https://www.youtube.com/c/PowerBITraining> |
 
 ## Estado
-- [ ] Projeto final (lab assíncrono) - submetido no Moodle
+- [x] Projeto final (lab assíncrono) - `EdmilsonLandim-10-11-2026.pbix`, publicado e submetido no Moodle (10/11/2026); ver correções recomendadas no guia
